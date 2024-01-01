@@ -1,4 +1,4 @@
-import { BaseToolBox, GameContext, GameToolBox } from '../../../types';
+import { BaseToolBox, GameContext, GameToolBox } from '../../types';
 import debugLog from '../../private/debugLog';
 
 /**

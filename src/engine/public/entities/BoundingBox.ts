@@ -1,4 +1,4 @@
-import { Dimensions2D, Vector2D } from '../../../types';
+import { Dimensions2D, Vector2D } from '../../types';
 
 interface BoundingBoxOptions {
   location: Vector2D;

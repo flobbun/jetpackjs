@@ -1,4 +1,4 @@
-import { BaseToolBox, Dimensions2D, Vector2D } from '../../../types';
+import { BaseToolBox, Dimensions2D, Vector2D } from '../../types';
 import { BoundingBox } from './BoundingBox';
 import { Sprite } from './Sprite';
 import { SpriteSheet } from './SpriteSheet';

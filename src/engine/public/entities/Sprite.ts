@@ -1,4 +1,4 @@
-import { BaseToolBox, Dimensions2D, Vector2D } from '../../../types';
+import { BaseToolBox, Dimensions2D, Vector2D } from '../../types';
 import { Entity } from './Entity';
 
 export type SpriteOptions = Pick<Entity, 'dimensions' | 'location'> & {

@@ -1,4 +1,4 @@
-import { GameToolBox } from '../../types';
+import { GameToolBox } from '../types';
 
 const debugLog = (
   message: string,
