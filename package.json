@@ -1,6 +1,6 @@
 {
   "name": "jetpackjs",
-  "version": "0.0.0-development",
+  "version": "0.0.1-development",
   "description": "JetpackJS is a lightweight JavaScript library for building 2D web games.",
   "main": "./lib/index.js",
   "files": [
