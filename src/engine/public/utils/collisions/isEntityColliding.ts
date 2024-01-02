@@ -1,5 +1,5 @@
 import { Entity } from '../../entities';
-import isEntityCollidingWithEntity from './isEntityCollidingWithEntity';
+import { isEntityCollidingWithEntity } from './isEntityCollidingWithEntity';
 
 /**
  * Checks if an entity is colliding with any other entities
@@ -7,7 +7,7 @@ import isEntityCollidingWithEntity from './isEntityCollidingWithEntity';
  * @param entities The entities to check against
  * @returns Whether or not the entity is colliding with any other entities
  */
-const isEntityColliding = (entity: Entity, entities: Entity[]) => {
+export const isEntityColliding = (entity: Entity, entities: Entity[]) => {
   if (!entity.boundingBox) return false;
 
   const collidingEntities = entities.filter(e => {
@@ -16,5 +16,3 @@ const isEntityColliding = (entity: Entity, entities: Entity[]) => {
 
   return collidingEntities.length > 0;
 };
-
-export default isEntityColliding;

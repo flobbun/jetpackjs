@@ -6,7 +6,10 @@ import { Entity } from '../../entities';
  * @param otherEntity The entity to check against
  * @returns Whether or not the entity is colliding with the other entity
  */
-const isEntityCollidingWithEntity = (entity: Entity, otherEntity: Entity) => {
+export const isEntityCollidingWithEntity = (
+  entity: Entity,
+  otherEntity: Entity
+) => {
   if (!entity.boundingBox) return false;
   if (!otherEntity.boundingBox) return false;
 
@@ -35,5 +38,3 @@ const isEntityCollidingWithEntity = (entity: Entity, otherEntity: Entity) => {
 
   return true;
 };
-
-export default isEntityCollidingWithEntity;
