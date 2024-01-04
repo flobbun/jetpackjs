@@ -1,12 +1,13 @@
 {
   "name": "jetpackjs",
-  "version": "0.0.3-development",
+  "version": "0.0.4-development",
   "description": "JetpackJS is a lightweight JavaScript library for building 2D web games.",
   "main": "./lib/index.js",
   "files": [
     "lib/**/*"
   ],
   "scripts": {
+    "publish": "npm run clean && npm run build && npm publish",
     "build": "tsc --project tsconfig.build.json",
     "clean": "rm -rf ./lib/",
     "cm": "cz",

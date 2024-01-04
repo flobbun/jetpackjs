@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "jetpackjs": "^0.0.2-development",
+    "jetpackjs": "^0.0.3-development",
     "typescript": "^5.3.3"
   }
 }
