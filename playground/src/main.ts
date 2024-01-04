@@ -21,10 +21,6 @@ class Player implements Entity {
         console.log("Player update");
     }
 
-    fixedUpdate(): void {
-        console.log("Player fixedUpdate");
-    }
-
     render(): void {
         console.log("Player render");
     }
@@ -39,7 +35,6 @@ const gameToolBox: GameToolBox = {
     },
     handleInput: (toolbox) => {},
     update: (toolbox) => {
-        console.log(toolbox.fps);
     },
     fixedUpdate: (toolbox) => {},
     render: (toolbox) => {},

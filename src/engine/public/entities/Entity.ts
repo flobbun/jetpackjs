@@ -1,45 +1,78 @@
-import { BaseToolBox, Dimensions2D, Vector2D } from '../../types';
+import {
+  BaseToolBox,
+  Dimensions2D,
+  FixedUpdateToolBox,
+  RenderToolBox,
+  UpdateToolbox,
+  Vector2D,
+} from '../../types';
 import { BoundingBox } from './BoundingBox';
 import { Sprite } from './Sprite';
 import { SpriteSheet } from './SpriteSheet';
 
 export interface Entity {
+  /**
+   * The id of the entity.
+   */
+  id: string | number;
+  /**
+   * The sprite of the entity.
+   */
   sprite?: Sprite | undefined;
+  /**
+   * The sprite sheet of the entity.
+   */
   spriteSheet?: SpriteSheet | undefined;
+  /**
+   * The bounding box of the entity.
+   */
   boundingBox?: BoundingBox | undefined;
+  /**
+   * The toolbox of the entity.
+   */
+  toolbox?: BaseToolBox;
+  /**
+   * The layer where the entity will be rendered, a higher number means it will be rendered on top of other entities.
+   */
+  layer: number;
+  /**
+   * Whether or not the entity is visible.
+   */
+  visible: boolean;
 
+  /**
+   * Called when the entity is initialized.
+   */
   init?(): void;
-  render?(): void;
-  update?(deltaTime: number): void;
+  /**
+   * Called when the entity is rendered.
+   */
+  render?(toolbox: RenderToolBox): void;
+  /**
+   * Called when the entity is updated.
+   */
+  update?(toolbox: UpdateToolbox): void;
+  /**
+   * Called when the entity is fixed updated.
+   */
+  fixedUpdate?(toolbox: FixedUpdateToolBox): void;
 }
 
 /**
- * @description
  * The base class for all entities in the game.
- *
- * Mandatory properties:
- * @param id: The id of the entity.
- * @param location: The location of the entity.
- * @param dimensions: The dimensions of the entity.
- * @param visible: Whether or not the entity is visible.
- * @param toolbox: The toolbox of the entity.
- *
- * Optional properties:
- * @param sprite: The sprite of the entity.
- * @param spriteSheet: The sprite sheet of the entity.
- * @param boundingBox: The bounding box of the entity.
- *
- * Optional methods:
- * - init: Called when the entity is initialized.
- * - render: Called when the entity is rendered.
- * - update: Called when the entity is updated.
  */
 export abstract class Entity {
-  public abstract id: string | number;
+  /**
+   * The location of the entity.
+   */
   public abstract location: Vector2D;
+
+  /**
+   * The dimensions of the entity.
+   */
   public abstract dimensions: Dimensions2D;
-  public abstract visible: boolean;
-  public abstract toolbox: BaseToolBox;
+  public visible = true;
+  public depth = 0;
 
   constructor() {
     if (this.init) {
